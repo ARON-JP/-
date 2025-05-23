@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram ログイン</title>
+  <style>
+    body {
+      background-color: #fafafa;
+      font-family: 'Helvetica Neue', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    .login-box {
+      background: white;
+      border: 1px solid #ccc;
+      width: 100%;
+      max-width: 350px;
+      padding: 40px 30px;
+      text-align: center;
+    }
+    .login-box h1 {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #dbdbdb;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0095f6;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 300px;
+      text-align: center;
+    }
+    .modal-content a {
+      display: inline-block;
+      margin-top: 15px;
+      color: blue;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>Instagram</h1>
+    <input type="text" placeholder="電話番号、ユーザーネーム、またはメールアドレス" />
+    <input type="password" placeholder="パスワード" />
+    <button onclick="showWarning()">ログイン</button>
+  </div>
+
+  <div class="modal" id="warningModal">
+    <div class="modal-content">
+      <p>これは学習用の疑似体験偽ログインサイトです<dr>これ以上詐欺に合わないために、必ずURLの確認、相手が乗っ取られていないかなどチェックしてください。</p>
+      <a href="#" onclick="closeWarning()">分かりました</a>
+    </div>
+  </div>
+
+  <script>
+    function showWarning() {
+      document.getElementById("warningModal").style.display = "flex";
+    }
+    function closeWarning() {
+      document.getElementById("warningModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
